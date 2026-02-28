@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: mancer
+  datasource:
+    password: Zhif-26021965$
+    username: postgres
+    url: jdbc:postgresql://db.ilrqqtquoofvzazyrqab.supabase.co:5432/postgres
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://ilrqqtquoofvzazyrqab.supabase.co/auth/v1
+
+
+
+
+
