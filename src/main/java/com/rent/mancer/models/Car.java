@@ -1,6 +1,7 @@
 package com.rent.mancer.models;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -38,5 +39,10 @@ public class Car {
     private BigDecimal rentPrice = new BigDecimal("0");
 
     private Boolean status;
+
+    @OneToOne(mappedBy = "car")
+    @JsonIgnore
+    private Reservation reservation;
+
 
 }

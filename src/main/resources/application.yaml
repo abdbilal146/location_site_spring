@@ -17,3 +17,6 @@ spring:
 
 
 
+variables:
+  cors:
+    url: http://localhost:5173

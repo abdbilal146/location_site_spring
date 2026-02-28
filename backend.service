@@ -1,0 +1,16 @@
+[Unit]
+Description=BStore Spring Boot App
+After=network.target
+
+[Service]
+User=abdelfetahmancer
+WorkingDirectory=/home/abdelfetahmancer/auto-location/location_site_spring
+ExecStart=/usr/bin/java -jar /home/abdelfetahmancer/auto-location/location_site_spring/build/libs/mancer-0.0.1-SNAPSHOT.jar \
+--spring.config.additional-location=file:/home/abdelfetahmancer/config/application-prod.yml
+
+SuccessExitStatus=143
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

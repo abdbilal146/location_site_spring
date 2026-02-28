@@ -1,6 +1,7 @@
 package com.rent.mancer.models;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.rent.mancer.models.records.Address;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -34,6 +35,7 @@ public class Client {
     private Boolean accountStatus;
 
     @OneToMany(mappedBy = "client")
+    @JsonIgnore
     private List<Reservation> reservations;
 
     @CreationTimestamp
