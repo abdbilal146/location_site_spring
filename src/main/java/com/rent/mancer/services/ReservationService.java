@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -62,5 +63,12 @@ public class ReservationService {
         newReservation.setReservationStatus(reservation.getReservationStatus());
 
         return reservationRepository.save(newReservation);
+    }
+
+
+    // this method to get all reservations
+
+    public List<Reservation> getAllReservations(){
+        return reservationRepository.findAll();
     }
 }

@@ -9,6 +9,7 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.UUID;
 
 @RestController
@@ -38,6 +39,11 @@ public class ReservationController {
                         uuid
                 )
         );
+    }
 
+
+    @GetMapping
+    public ResponseEntity<List<Reservation>> getAllReservations(){
+        return ResponseEntity.ok(reservationService.getAllReservations());
     }
 }
