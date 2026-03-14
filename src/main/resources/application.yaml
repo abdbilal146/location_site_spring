@@ -9,6 +9,7 @@ spring:
     hibernate:
       ddl-auto: update
 
+
   security:
     oauth2:
       resourceserver:
@@ -20,3 +21,12 @@ spring:
 variables:
   cors:
     url: http://localhost:5173
+
+
+gcp:
+  bucket:
+    name: auto_location_bucket
+  config:
+    file: focused-waters-483521-q2-5f18e1de12bd.json
+
+

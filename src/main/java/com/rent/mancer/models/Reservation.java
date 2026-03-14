@@ -7,7 +7,10 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
@@ -25,15 +28,19 @@ public class Reservation {
 
     @ManyToOne
     @JoinColumn(name = "client_id")
+    @OnDelete(action = OnDeleteAction.SET_NULL)
     private Client client;
 
     @OneToOne()
     @JoinColumn(name = "car_id", unique = true)
     private Car car;
 
+    private BigDecimal price;
+
     private String startDate;
 
     private String endDate;
+
 
     @CreationTimestamp
     @Column(updatable = false)
@@ -41,5 +48,7 @@ public class Reservation {
 
     @Enumerated(EnumType.STRING)
     private ReservationStatus reservationStatus;
+
+
 
 }
